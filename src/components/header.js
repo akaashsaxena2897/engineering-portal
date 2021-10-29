@@ -14,7 +14,7 @@ import { validEmail } from "./regex.js"
 import Helmet from "react-helmet"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import requestNotifications from "../utils/pushNotifications.js"
 const logger = function (linkName, headerLink) {
   ReactGA.event({
     category: "Header Menu Clicks",
@@ -439,6 +439,7 @@ const Header = ({ menuLinks, searchIndex }) => {
           toggleMenu(false)
         }}
       />
+      <script>requestNotifications</script>
     </>
   )
 }
